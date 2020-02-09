@@ -1,7 +1,10 @@
-class ZElementButton extends HTMLElement {
+export class ZElementButton extends HTMLElement {
     // Specify which attributes are to be observed by attributeChangedCallback
     static get observedAttributes() {
         return ["style", "title", "disabled", "active", "role"];
+    }
+    static get is() {
+        return 'z-ui-btn';
     }
     static get template() {
         return `
@@ -54,7 +57,7 @@ class ZElementButton extends HTMLElement {
     constructor() {
         super(); // establish the correct prototype chain and this value before any further code is run
         this.attachShadow({mode: 'open'});
-        this.componentTagName = "z-ui-btn";
+        this.componentTagName = ZElementButton.is;
         this.StateBemModifiers = {
             "active": "--active",
             "disabled": "--disabled"
@@ -159,4 +162,4 @@ class ZElementButton extends HTMLElement {
         console.log(e);
     }
 }
-window.customElements.define("z-ui-btn", ZElementButton);
+window.customElements.define(ZElementButton.is, ZElementButton);

@@ -1,0 +1,11 @@
+{
+  "name": "z-ui-btn",
+  "version": "1.0.0",
+  "description": "A native button web component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven Luscott",
+  "license": "ISC"
+}
